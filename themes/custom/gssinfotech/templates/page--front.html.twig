@@ -1,0 +1,14 @@
+{#
+/**
+ * @file
+ * Theme override to display a single page.
+ */
+#}
+
+{% include directory ~ '/includes/header.html.twig' %}
+
+		{% if page.slider %}
+			{{page.slider}}
+		{% endif %}
+
+{% include directory ~ '/includes/footer.html.twig' %}

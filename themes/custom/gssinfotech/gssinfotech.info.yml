@@ -1,0 +1,23 @@
+name: GSS Infotech
+type: theme
+base theme: classy
+description: A custom theme for GSS.
+package: custom
+# core: 8.x
+libraries:
+  - gssinfotech/global
+regions:
+    header : Header
+    slider : Slider
+    left_sidebar: Left Sidebar
+    content_top: Content Top
+    content : Content
+    content_bottom: Content Bottom
+    right_sidebar: Right Sidebar
+    
+
+# Information added by Drupal.org packaging script on 2018-05-09
+version: '8.6.1'
+core: '8.x'
+project: 'drupal'
+datestamp: 1525835220

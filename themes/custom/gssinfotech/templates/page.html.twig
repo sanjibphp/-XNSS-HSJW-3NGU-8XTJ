@@ -1,0 +1,43 @@
+{#
+/**
+ * @file
+ * Theme override to display a single page.
+ */
+#}
+
+{% include directory ~ '/includes/header.html.twig' %}
+
+	{% if page.left_sidebar %}
+	{% set full_content_class = 'col-md-9' %}
+	{% else %}
+	{% set full_content_class = 'col-md-12' %}
+	{% endif %}
+	
+	{% if page.right_sidebar %}
+	{% set content_class = 'col-md-9' %}
+	{% else %}
+	{% set content_class = 'col-md-12' %}
+	{% endif %}
+
+	<div class="row">
+	{% if page.left_sidebar %}
+		<div class="col-md-3">
+			{{ page.left_sidebar }}
+		</div>
+	{% endif %}
+		<div class="{{ full_content_class }}">
+			<div class="content_top">{{ content_top }}</div>
+			<div class="row">
+				<div class="{{ content_class }}">
+					{{ page.content }}
+				</div>
+				{% if page.right_sidebar %}
+				<div class="col-md-3">
+					{{ page.right_sidebar }}
+				</div>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+
+{% include directory ~ '/includes/footer.html.twig' %}

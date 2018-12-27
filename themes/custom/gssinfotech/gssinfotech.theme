@@ -1,0 +1,100 @@
+<?php
+
+function gssinfotech_preprocess_page(&$vars) {
+
+global $base_url;
+
+	/* Main Menu Starts */
+
+      $menu_tree = \Drupal::menuTree();
+      $menu_name = 'main';
+      // Build the typical default set of menu tree parameters.
+      $parameters = $menu_tree->getCurrentRouteMenuTreeParameters($menu_name);
+      // Load the tree based on this set of parameters.
+      $tree = $menu_tree->load($menu_name, $parameters);
+      // Transform the tree using the manipulators you want.
+      $manipulators = array(
+      // Only show links that are accessible for the current user.
+      array('callable' => 'menu.default_tree_manipulators:checkAccess'),
+      // Use the default sorting of menu links.
+      array('callable' => 'menu.default_tree_manipulators:generateIndexAndSort'),
+      );
+      $tree = $menu_tree->transform($tree, $manipulators);
+      // Finally, build a renderable array from the transformed tree.
+	  
+      $menu = $menu_tree->build($tree);
+
+      $main_menu = drupal_render($menu);
+	  
+      $vars['main_menu'] = $main_menu;
+	  
+	/* Main Menu Ends */
+	
+	/* Footer Menu Starts */
+
+      $footermenu_tree = \Drupal::menuTree();
+      $footermenu_name = 'footer-menu';
+      // Build the typical default set of menu tree parameters.
+      $footerparameters = $footermenu_tree->getCurrentRouteMenuTreeParameters($footermenu_name);
+      // Load the tree based on this set of parameters.
+      $footertree = $footermenu_tree->load($footermenu_name, $footerparameters);
+      // Transform the tree using the manipulators you want.
+      $footermanipulators = array(
+      // Only show links that are accessible for the current user.
+      array('callable' => 'menu.default_tree_manipulators:checkAccess'),
+      // Use the default sorting of menu links.
+      array('callable' => 'menu.default_tree_manipulators:generateIndexAndSort'),
+      );
+      $footertree = $footermenu_tree->transform($footertree, $footermanipulators);
+      // Finally, build a renderable array from the transformed tree.
+	  
+      $footermenu = $footermenu_tree->build($footertree);
+
+      $footer_menu = drupal_render($footermenu);
+	  
+      $vars['footer_menu'] = $footer_menu;
+	  
+	/* Footer Menu Ends */
+
+$block = \Drupal\block\Entity\Block::load('gssinfotech_branding');
+		$block_content = \Drupal::entityTypeManager()
+		->getViewBuilder('block')
+		->view($block);
+		
+$social_block = \Drupal\block\Entity\Block::load('views_block__top_social_icons_block_1');
+		$socialblock_content = \Drupal::entityTypeManager()
+		->getViewBuilder('block')
+		->view($social_block);
+		
+$vars['gssinfotech_branding'] = $block_content;
+$vars['social_block'] = $socialblock_content;
+
+$vars['footer_content'] = '© GSS Infotech CT Inc. - ' . date("Y");
+
+}
+
+
+/**
+* Implements hook_preprocess_node() for NODE document templates.
+*/
+function gssinfotech_preprocess_node(&$variables) {
+
+$node = \Drupal::routeMatch()->getParameter('node');
+if ($node instanceof \Drupal\node\NodeInterface) {
+  $nid = $node->id();
+}
+
+if($nid == 15){
+	
+$menu_tree = Drupal::menuTree();
+$parameters = $menu_tree->getCurrentRouteMenuTreeParameters('main');
+$parameters->setTopLevelOnly();
+$main_menu_top_level = $menu_tree->load('main', $parameters);
+
+echo '<pre>';
+print_r($parameters);
+exit();
+	
+}
+
+}
