@@ -1,0 +1,8 @@
+name: Sidebar Menu Block
+description: A simple module for Sidebar Menu Block.
+core: 8.x
+package: Custom
+dependencies:
+- node
+- block
+type: module

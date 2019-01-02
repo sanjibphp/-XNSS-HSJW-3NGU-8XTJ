@@ -101,3 +101,15 @@ li.nolist {
     margin-right: 10px;
     padding-right: 10px;
 }
+.sidemenufirst a.liactive {
+    background: #ccc;
+}
+.sidemenufirst > li > a {
+    display: none;
+}
+.sidemenufirst > li, .sidesecondmenu > li, .sidethirdmenu > li {
+    list-style: none;
+}
+a.liactive {
+    background: #ccc;
+}
