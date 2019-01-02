@@ -84,17 +84,4 @@ if ($node instanceof \Drupal\node\NodeInterface) {
   $nid = $node->id();
 }
 
-if($nid == 15){
-	
-$menu_tree = Drupal::menuTree();
-$parameters = $menu_tree->getCurrentRouteMenuTreeParameters('main');
-$parameters->setTopLevelOnly();
-$main_menu_top_level = $menu_tree->load('main', $parameters);
-
-echo '<pre>';
-print_r($parameters);
-exit();
-	
-}
-
 }
