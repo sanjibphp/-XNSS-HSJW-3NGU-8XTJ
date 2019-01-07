@@ -72,4 +72,5 @@ jQuery(document).ready(function($){
         $('.owl-next', element).toggleClass('hidden', current === carousel.maximum());
         $('.owl-prev', element).toggleClass('hidden', current === carousel.minimum());
     });
+	jQuery('.sidemenufirst').appendTo('.region-left-sidebar');
 });

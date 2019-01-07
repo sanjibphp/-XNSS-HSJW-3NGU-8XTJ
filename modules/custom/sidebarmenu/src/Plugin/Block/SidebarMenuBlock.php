@@ -146,4 +146,12 @@ $menuItems = [];
 echo $menucontent;
 
   }
+  
+  /**
+     * {@inheritdoc}
+     */
+    public function getCacheMaxAge() {
+        return 0;
+    }
+  
 }
