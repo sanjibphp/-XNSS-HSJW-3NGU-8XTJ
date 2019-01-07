@@ -113,3 +113,19 @@ li.nolist {
 a.liactive {
     background: #ccc;
 }
+
+.row.countryrow {
+    margin-bottom: 50px;
+}
+.countrycat {
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.statecat {
+    font-weight: bold;
+}
+.countryrow .col-md-3 {
+    border-right: 1px solid #ccc;
+    padding-left: 40px;
+}
