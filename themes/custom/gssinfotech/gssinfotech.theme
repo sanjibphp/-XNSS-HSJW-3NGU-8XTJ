@@ -101,7 +101,7 @@ if($nid == 69){
 		$getNodes = getNodesByTaxonomyTermIds($term->tid);
 		foreach($getNodes as $nodeval){
 			$node = \Drupal\node\Entity\Node::load($nodeval->nid);
-			$locationsContent .= '<div class="col-md-3"><span class="statecat">'.$node->title->value.'</span><p>'.$node->body->value.'</p></div>';
+			$locationsContent .= '<div class="col-md-4"><span class="statecat">'.$node->title->value.'</span><p>'.$node->body->value.'</p></div>';
 		}
 		$locationsContent .= '</div>';
 	}
