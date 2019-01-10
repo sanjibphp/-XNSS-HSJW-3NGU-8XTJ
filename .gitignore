@@ -16,8 +16,10 @@ sites/*/settings*.php
 sites/*/services*.yml
 
 # Ignore paths that contain user-generated content.
-sites/*/files
-sites/*/private
+#sites/*/files
+#sites/*/private
+sites/*/files/php
+sites/default/settings.php
 
 # Ignore SimpleTest multi-site environment.
 sites/simpletest
