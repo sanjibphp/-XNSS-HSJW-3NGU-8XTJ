@@ -73,6 +73,11 @@ $vars['footer_content'] = '© GSS Infotech CT Inc. - ' . date("Y");
 
 }
 
+function getNodesByTaxonomyTermIds($term_id){
+  $nodes = db_query("select nid from taxonomy_index where tid=" . $term_id)->fetchAll();
+  return $nodes;
+}
+
 
 /**
 * Implements hook_preprocess_node() for NODE document templates.
@@ -84,16 +89,96 @@ if ($node instanceof \Drupal\node\NodeInterface) {
   $nid = $node->id();
 }
 
-if($nid == 15){
+if($nid == 69){
 	
-$menu_tree = Drupal::menuTree();
-$parameters = $menu_tree->getCurrentRouteMenuTreeParameters('main');
-$parameters->setTopLevelOnly();
-$main_menu_top_level = $menu_tree->load('main', $parameters);
+	$locationsContent = '';
+	
+	$vid = 'locations';
+	$terms =\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree($vid);
+	foreach($terms as $term){
+		$locationsContent .= '<div class="row countryrow">';
+		$locationsContent .= '<div class="col-md-12"><div class="countrycat">' . $term->name . '</div><p>' . $term->description__value . '</p></div>';
+		$getNodes = getNodesByTaxonomyTermIds($term->tid);
+		foreach($getNodes as $nodeval){
+			$node = \Drupal\node\Entity\Node::load($nodeval->nid);
+			$locationsContent .= '<div class="col-md-4"><span class="statecat">'.$node->title->value.'</span><p>'.$node->body->value.'</p></div>';
+		}
+		$locationsContent .= '</div>';
+	}
+	
+	$variables['locationsContent'] = $locationsContent;
+	
+}
 
-echo '<pre>';
-print_r($parameters);
-exit();
+if($nid == 82){
+	
+	$casestudiesContent = '';
+	
+	$vid = 'case_studies';
+	$terms =\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree($vid);
+	foreach($terms as $term){
+		$getNodes = getNodesByTaxonomyTermIds($term->tid);
+		if(count($getNodes) > 0){
+		$casestudiesContent .= '<div class="casetudysection">';
+		$casestudiesContent .= '<div class="col-md-12"><div class="casestudycat">' . $term->name . '</div></div>';
+		foreach($getNodes as $nodeval){
+			$node = \Drupal\node\Entity\Node::load($nodeval->nid);
+			
+			$imagefid = $node->field_brochure_image->target_id;   
+			$imagefile = \Drupal\file\Entity\File::load($imagefid);
+			if($imagefile){
+			$imagepath = '/sites/default/files/' . str_replace("public://","",$imagefile->getFileUri());
+			}
+			
+			$pdffid = $node->field_upload_brochure->target_id;   
+			$pdffile = \Drupal\file\Entity\File::load($pdffid);
+			if($pdffile){
+			$pdfpath = '/sites/default/files/' . str_replace("public://","",$pdffile->getFileUri());
+			}
+			if($node->field_su->value != ''){$subtitle = '('.$node->field_su->value.')';}else{$subtitle='';}
+			$casestudiesContent .= '<div class="row"><div class="col-md-2"><a href="'.$pdfpath.'"><img src="'.$imagepath.'"></a></div><div class="col-md-10"><p><strong>'.$node->title->value.'</strong>'.$subtitle.'</p><p>'.$node->body->value.'</p><a href="'.$pdfpath.'">Download</a></div></div>';
+		}
+		$casestudiesContent .= '</div>';
+		}
+	}
+	
+	$variables['casestudiesContent'] = $casestudiesContent;
+	
+}
+
+if($nid == 86){
+	
+	$whitepapersContent = '';
+	
+	$vid = 'white_papers';
+	$terms =\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree($vid);
+	foreach($terms as $term){
+		$getNodes = getNodesByTaxonomyTermIds($term->tid);
+		if(count($getNodes) > 0){
+		$whitepapersContent .= '<div class="casetudysection">';
+		$whitepapersContent .= '<div class="col-md-12"><div class="casestudycat">' . $term->name . '</div></div>';
+		foreach($getNodes as $nodeval){
+			$node = \Drupal\node\Entity\Node::load($nodeval->nid);
+			
+			$imagefid = $node->field_brochure_image->target_id;   
+			$imagefile = \Drupal\file\Entity\File::load($imagefid);
+			if($imagefile){
+			$imagepath = '/sites/default/files/' . str_replace("public://","",$imagefile->getFileUri());
+			}
+			
+			$pdffid = $node->field_upload_brochure->target_id;   
+			$pdffile = \Drupal\file\Entity\File::load($pdffid);
+			if($pdffile){
+			$pdfpath = '/sites/default/files/' . str_replace("public://","",$pdffile->getFileUri());
+			}
+			if($node->field_su->value != ''){$subtitle = '('.$node->field_su->value.')';}else{$subtitle='';}
+			$whitepapersContent .= '<div class="row"><div class="col-md-2"><a href="'.$pdfpath.'"><img src="'.$imagepath.'"></a></div><div class="col-md-10"><p><strong>'.$node->title->value.'</strong>'.$subtitle.'</p><p>'.$node->body->value.'</p><a href="'.$pdfpath.'">Download</a></div></div>';
+		}
+		$whitepapersContent .= '</div>';
+		}
+	}
+	
+	$variables['whitepapersContent'] = $whitepapersContent;
 	
 }
 

@@ -8,7 +8,7 @@
 {% include directory ~ '/includes/header.html.twig' %}
 
 	{% if page.left_sidebar %}
-	{% set full_content_class = 'col-md-9' %}
+	{% set full_content_class = 'col-md-10' %}
 	{% else %}
 	{% set full_content_class = 'col-md-12' %}
 	{% endif %}
@@ -21,12 +21,12 @@
 
 	<div class="row">
 	{% if page.left_sidebar %}
-		<div class="col-md-3">
+		<div class="col-md-2">
 			{{ page.left_sidebar }}
 		</div>
 	{% endif %}
 		<div class="{{ full_content_class }}">
-			<div class="content_top">{{ content_top }}</div>
+			<div class="content_top">{{ page.content_top }}</div>
 			<div class="row">
 				<div class="{{ content_class }}">
 					{{ page.content }}
