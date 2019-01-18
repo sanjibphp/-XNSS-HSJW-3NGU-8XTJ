@@ -172,3 +172,56 @@ ul.sidemenufirst {
 ul.sidesecondmenu {
     padding: 10px;
 }
+.latestreport img {
+	width: 100%;
+}
+.sharetitle {
+    margin-right: 20px;
+}
+.sharetitle p {
+    font-size: 34px;
+    font-weight: bold;
+    color: #C8D9DB;
+}
+.sharepdf ul {
+    list-style: none;
+}
+.pdfpattern .col-md-10 {
+    margin-top: 10px;
+}
+.pdfpattern {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+.accoladespattern {
+	border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
+	padding-bottom: 20px;
+}
+.accoladespattern .accoladesbody {
+    margin-top: 3%;
+}
+footer {
+    position: fixed;
+    bottom: 0px;
+}
+#block-views-block-download-brochure-block-2 span.field-content {
+    font-size: 22px;
+    font-weight: bold;
+    color: #95668E;
+}
+#block-views-block-download-brochure-block-2 .views-field.views-field-field-image img {
+    margin-left: 470px;
+}
+#block-views-block-download-brochure-block-2 .views-field.views-field-field-image {
+    border-bottom: solid 5px #f3e5e5;
+}
+.page-title {
+	display: none;
+}
+.heading2 {
+    color: #5E5E5E;
+    font-family: "Helvetica";
+    font-size: 15px;
+    font-weight: bold;
+}
