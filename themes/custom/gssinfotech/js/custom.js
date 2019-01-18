@@ -73,4 +73,5 @@ jQuery(document).ready(function($){
         $('.owl-prev', element).toggleClass('hidden', current === carousel.minimum());
     });
 	jQuery('.sidemenufirst').appendTo('.region-left-sidebar');
+	jQuery('.custombreadcrumb').appendTo('.content_top');
 });
