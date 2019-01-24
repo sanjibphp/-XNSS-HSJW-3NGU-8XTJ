@@ -182,4 +182,42 @@ if($nid == 86){
 	
 }
 
+if($nid == 100){
+	$annualContent = '';
+	$nids = \Drupal::entityQuery('node')->condition('type','annual_reports')->execute();
+	$nodes =  \Drupal\node\Entity\Node::loadMultiple($nids);
+	$annualContent .= '<div class="row">';
+	foreach($nodes as $nodekey => $nodeval){
+		
+		$title = $nodeval->title->value;
+		$titlelist = explode(" ",$title);
+		$titleyear = $titlelist[1];
+		$prevtitleyear = $titleyear-1;
+		$newtitle = 'Annual Reports ' . $prevtitleyear . ' - ' . $titleyear;
+		$imagefid = $nodeval->field_brochure_image->target_id;   
+		$imagefile = \Drupal\file\Entity\File::load($imagefid);
+		if($imagefile){
+			$imagepath = '/sites/default/files/' . str_replace("public://","",$imagefile->getFileUri());
+		}
+			
+		$pdffid = $nodeval->field_upload_brochure->target_id;   
+		$pdffile = \Drupal\file\Entity\File::load($pdffid);
+		if($pdffile){
+			$pdfpath = '/sites/default/files/' . str_replace("public://","",$pdffile->getFileUri());
+		}
+		
+		if($nodeval->field_sort_order->value != 1){
+		$annualContent .= '<div class="col-md-4"><a href="'.$pdfpath.'"><img src="'.$imagepath.'"></a><br>'.$newtitle.'</div>';
+		}else{
+			$firstannualcontent = '<a href="'.$pdfpath.'"><img src="'.$imagepath.'"></a><br>'.$newtitle;
+		}
+		
+	}
+	$annualContent .= '</div>';
+	
+	$variables['annualContent'] = $annualContent;
+	$variables['firstannualcontent'] = $firstannualcontent;
+	
+}
+
 }
