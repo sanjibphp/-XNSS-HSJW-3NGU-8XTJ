@@ -74,4 +74,18 @@ jQuery(document).ready(function($){
     });
 	jQuery('.sidemenufirst').appendTo('.region-left-sidebar');
 	jQuery('.custombreadcrumb').appendTo('.content_top');
+	
+	jQuery('.india-open').click(function(){
+		jQuery('#block-views-block-career-openings-india-block-1').show();
+		jQuery('#block-views-block-career-openings-india-block-2').hide();
+		jQuery('.openings-tabs div').removeClass('openactive');
+		jQuery(this).addClass('openactive');
+	});
+	jQuery('.usa-open').click(function(){
+		jQuery('#block-views-block-career-openings-india-block-2').show();
+		jQuery('#block-views-block-career-openings-india-block-1').hide();
+		jQuery('.openings-tabs div').removeClass('openactive');
+		jQuery(this).addClass('openactive');
+	});
+	jQuery('.india-open').trigger('click');
 });

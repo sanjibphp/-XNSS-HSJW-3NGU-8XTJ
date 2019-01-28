@@ -173,12 +173,13 @@ li.nolist {
 	color: #000;
 }
 #mega-menu-3 .leafitem a {
-	padding: 2px 4px 2px 16px;
-	font-weight: normal;
-	background:url(../images/menu_list_bullet.png) no-repeat 5px 4px !important;
+    padding: 2px 4px 2px 16px;
+    font-weight: normal;
+    background: url(../images/menu_list_bullet.png) no-repeat 0px 9px !important;
+    margin-left: 10px;
 }
 #mega-menu-3 .sub li.mega-hdr li ul li a {
-	padding: 2px 4px 2px 10px!important;
+	/*padding: 2px 4px 2px 10px!important;*/
 	font-weight: normal;
 }
 #mega-menu-3 .sub li.mega-hdr li.no_list_hover a {
@@ -224,4 +225,14 @@ li.nolist {
 	padding: 2px 4px 2px 16px;
 	font-weight: normal;
 	background:url(../images/menu_list_bullet.png) no-repeat 5px 4px;
+}
+#mega-menu-3 .leafitem .normalitem a {
+    padding: 2px 4px 2px 0px!important;
+    margin-left: -6px;
+}
+#mega-menu-3 .leafitem ul {
+    margin-left: 40px;
+}
+#mega-menu-3 li .sub li:last-child {
+    border: none;
 }
