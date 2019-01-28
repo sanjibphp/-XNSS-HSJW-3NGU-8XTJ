@@ -105,17 +105,11 @@ li.nolist {
     margin-right: 10px;
     padding-right: 10px;
 }
-.sidemenufirst a.liactive {
-    background: #ccc;
-}
 .sidemenufirst > li > a {
     display: none;
 }
 .sidemenufirst > li, .sidesecondmenu > li, .sidethirdmenu > li {
     list-style: none;
-}
-a.liactive {
-    background: #ccc;
 }
 
 .row.countryrow {
@@ -288,4 +282,79 @@ footer {
     font-family: "Helvetica";
     font-size: 15px;
     font-weight: bold;
+}
+#block-views-block-career-openings-india-block-1 td {
+    border: 1px solid #ede1ec;
+    padding: 10px 84px;
+}
+#block-views-block-career-openings-india-block-1 th, #block-views-block-career-openings-india-block-2 th {
+    text-align: center;
+	border: 1px solid #ede1ec;
+	padding: 10px;
+}
+#block-views-block-career-openings-india-block-1 tr, #block-views-block-career-openings-india-block-2 tr {
+    border: 1px solid #ede1ec;
+}
+#block-views-block-career-openings-india-block-2 td {
+    border: 1px solid #ede1ec;
+    padding: 10px 84px;
+}
+#block-views-block-career-openings-india-block-2 th {
+    text-align: center;
+}
+#block-views-block-career-openings-india-block-1 table, #block-views-block-career-openings-india-block-2 table  {
+    margin: 30px 0;
+}
+#block-views-block-career-openings-india-block-1 thead tr, #block-views-block-career-openings-india-block-2 thead tr {
+    background: #f3e5e5;
+}
+.sidesecondmenu li a {
+    display: block;
+    outline: medium none;
+    padding: 3px;
+    color: #666666;
+    line-height: 19px;
+    font-size: 12px;
+}
+.liactive {
+    background-image: url(../images/ul_li_bg.png);
+    background-repeat: no-repeat;
+    background-position: right;
+    color: #666666 !important;
+    font-weight: 100;
+}
+ul.sidethirdmenu {
+    padding: 0;
+}
+.sidethirdmenu li a {
+    border-bottom: 1px dashed #ccc;
+}
+.sidesecondmenu > li > a {
+    border-bottom: 2px solid #c15db8;
+    color: #383435;
+    font-weight: bold;
+}
+.openings-tabs div {
+    display: inline-block;
+    background: #c392bf;
+    padding: 6px 30px;
+    color: #fff;
+    font-weight: bold;
+}
+.openactive {
+	background: #9e5199 !important;
+}
+.openings-tabs {
+    border-bottom: solid 5px #9e5199;
+    margin-bottom: 30px;
+}
+.current-footer {
+    background: #FF9;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #CCC;
+    font-weight: bold;
+}
+.current-footer p {
+    margin: 0;
 }
