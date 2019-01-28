@@ -172,6 +172,65 @@ ul.sidemenufirst {
 ul.sidesecondmenu {
     padding: 10px;
 }
+
+/* New Styles */
+#methodology-owl .arrow.left, #methodology-owl .arrow.right {
+    position: relative;
+    bottom: 120px;
+    color: #fff;
+    font-size: 20px;
+}
+#methodology-owl .arrow.right{
+	left: 437px;
+}
+.methbody {
+    padding: 60px;
+    color: #fff;
+}
+.arrow-text {
+    padding: 10px;
+    background: #2a2a2a;
+}
+#methodology-owl {
+    width: 60%;
+}
+#methodology-owl button:focus {
+    outline: none;
+}
+
+/* Mobile Solutions */
+#block-views-block-mobile-solutions-block-1 ul.row {
+    list-style: none;
+}
+#block-views-block-mobile-solutions-block-1 ul.row li {
+    border: 1px solid #ccc;
+    padding: 10px;
+    height: 130px;
+    margin: 0 5px 5px 0;
+    flex: 0 0 30%;
+    max-width: 30%;
+}
+.descrptn-mbsolutions {
+    position: absolute;
+    left: 100px;
+    top: 0;
+	margin-top: 10px;
+}
+a.ln-mre {
+    margin-right: 10px;
+    position: absolute;
+	top: 95px !important;
+    right: 0;
+}
+.mobile_app.mobile_iphone {
+    width: 35%;
+}
+.descrptn-mbsolutions div {
+    min-height: 50px;
+}
+.descrptn-mbsolutions p {
+    margin: 0;
+}
 .latestreport img {
 	width: 100%;
 }
@@ -204,6 +263,11 @@ ul.sidesecondmenu {
 footer {
     position: fixed;
     bottom: 0px;
+    background: #fff;
+    width: 100%;
+}
+.contentsec {
+    margin-bottom: 80px;
 }
 #block-views-block-download-brochure-block-2 span.field-content {
     font-size: 22px;
