@@ -73,7 +73,40 @@ jQuery(document).ready(function($){
         $('.owl-prev', element).toggleClass('hidden', current === carousel.minimum());
     });
 	jQuery('.sidemenufirst').appendTo('.region-left-sidebar');
+
+});
+
+(function ($) {
+	Drupal.behaviors.methodologyOwlcarousel = {
+		attach: function(context, settings) {
+			$('#methodology-owl').owlCarousel({
+				nav: true,
+				loop: true,
+				items: 1 ,
+				navText : ['<span class="arrow left"><div class="arrow-text"><</div></span>','<span class="arrow right"><div class="arrow-text">></div></span>'],
+				responsiveClass:true,
+				responsive:{
+				0:{
+					items:1,
+					nav:true
+				},
+				600:{
+					items:1,
+					nav:true
+				},
+				1000:{
+					items:1,
+					nav:true,
+				}
+			}
+			});
+			
+		}
+	};
+}(jQuery));
+
 	jQuery('.custombreadcrumb').appendTo('.content_top');
+
 	
 	jQuery('.india-open').click(function(){
 		jQuery('#block-views-block-career-openings-india-block-1').show();
@@ -89,3 +122,7 @@ jQuery(document).ready(function($){
 	});
 	jQuery('.india-open').trigger('click');
 });
+
+});
+
+
