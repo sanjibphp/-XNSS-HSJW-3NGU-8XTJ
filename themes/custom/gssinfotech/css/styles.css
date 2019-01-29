@@ -358,3 +358,24 @@ ul.sidethirdmenu {
 .current-footer p {
     margin: 0;
 }
+
+/* Information Request Form / Contact US Form */
+#contact-message-contact-us-form .form-text {
+    display: inline-block;
+}
+#contact-message-contact-us-form .form-textarea-wrapper {
+    display: inline-block;
+}
+#contact-message-contact-us-form .form-type-textarea label{
+    position: relative;
+    bottom: 40px;
+}
+#contact-message-contact-us-form label {
+    min-width: 150px;
+}
+div#block-contactform {
+    margin-bottom: 80px;
+}
+#contact-message-contact-us-form input#edit-preview {
+    display: none;
+}
