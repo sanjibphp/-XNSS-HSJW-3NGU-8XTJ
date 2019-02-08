@@ -1,6 +1,14 @@
 body {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 12px;
+	color: #696969;
+}
+h2 {
+    font-size: 18px;
+    font-weight: bold;
+}
+h3 {
+    font-size: 14px;
 }
 .row.header {
     margin: 0;
@@ -173,6 +181,7 @@ ul.sidesecondmenu {
     bottom: 120px;
     color: #fff;
     font-size: 20px;
+	bottom: 176px;
 }
 #methodology-owl .arrow.right{
 	left: 437px;
@@ -180,6 +189,7 @@ ul.sidesecondmenu {
 .methbody {
     padding: 60px;
     color: #fff;
+	min-height: 300px;
 }
 .arrow-text {
     padding: 10px;
@@ -229,7 +239,7 @@ a.ln-mre {
 	width: 100%;
 }
 .sharetitle {
-    margin-right: 20px;
+    margin-right: 40px;
 }
 .sharetitle p {
     font-size: 34px;
@@ -255,10 +265,12 @@ a.ln-mre {
     margin-top: 3%;
 }
 footer {
-    position: fixed;
-    bottom: 0px;
+    /* position: fixed; */
+    bottom: 0;
     background: #fff;
     width: 100%;
+    margin-top: 30px;
+    /* clear: both; */
 }
 .contentsec {
     margin-bottom: 80px;
@@ -269,10 +281,13 @@ footer {
     color: #95668E;
 }
 #block-views-block-download-brochure-block-2 .views-field.views-field-field-image img {
-    margin-left: 470px;
+    margin-left: 260px;
 }
 #block-views-block-download-brochure-block-2 .views-field.views-field-field-image {
     border-bottom: solid 5px #f3e5e5;
+    height: 126px;
+    overflow: hidden;
+    width: 89%;
 }
 .page-title {
 	display: none;
@@ -378,4 +393,131 @@ div#block-contactform {
 }
 #contact-message-contact-us-form input#edit-preview {
     display: none;
+}
+span.train-title {
+    color: #ad67a6;
+    font-weight: bold;
+    background-image: url(../images/vid-arrow.png);
+}
+.col-md-2.left-tr {
+    margin-right: 20px;
+}
+.control-m-training div {
+    display: inline-block;
+}
+.control-m-training {
+    border-bottom: 1px dotted #CCCCCC;
+    padding: 10px;
+}
+#block-views-block-bmc-control-m-training-courses-block-1 h2 {
+    background-color: #f3e5e5;
+    padding: 5px 0 5px 10px;
+}
+/* li.stronglink > a {
+    pointer-events: none;
+} */
+.cnt-bck {
+    text-align: center;
+    margin: 50px;
+}
+.cnt-bck p {
+    margin: 5px;
+}
+.cnt-bck a {
+    background: #5d1547;
+    padding: 4px 10px;
+    color: #fff;
+}
+#block-views-block-webinars-block-1 h5 {
+    font-size: 12px;
+    color: #ad67a6;
+    font-weight: bold;
+    padding: 3px 0 0px 10px;
+    background-image: url(../images/vid-arrow.png);
+    background-repeat: no-repeat;
+    background-position: left;
+}
+#block-views-block-webinars-block-1 .views-row{
+	border-bottom: 1px dotted #ccc;
+	margin-bottom: 20px
+}
+#block-views-block-professional-list-block-1 table {
+    border-collapse: collapse;
+    width: 100%;
+}
+#block-views-block-professional-list-block-1 tbody tr:nth-child(even) {
+    background: #cce6ff;
+}
+#block-views-block-professional-list-block-1 td {
+    height: 20px;
+    padding: 5px;
+    border: 1px solid #ede1ec;
+}
+#block-views-block-professional-list-block-1 thead tr {
+    background: #cce6ff;
+	height: 30px;
+}
+.file--application-pdf a:hover, .ln-mre a:hover {
+    color: #5f1ba2 !important;
+    text-decoration: none;
+}
+.file--application-pdf a:link, .ln-mre a:link {
+    color: #ab77df;
+    text-decoration: none;
+}
+.file--application-pdf a:visited, .ln-mre a:visited {
+    color: #ab77df;
+    text-decoration: none;
+}
+#block-views-block-career-openings-india-block-2 {
+    display: none;
+}
+#block-views-block-career-openings-india-block-1 a, #block-views-block-career-openings-india-block-2 a {
+    color: #696969;
+}
+#block-views-block-faq-block-1 span.views-label.views-label-body {
+    float: left;
+    margin-right: 5px;
+}
+.page-node-type-annual-reports .field--name-field-color-code {
+    font-size: 34px;
+    font-weight: bold;
+    color: #C8D9DB;
+	margin-right: 50px;
+}
+.page-node-type-annual-reports .node__content > div {
+    display: inline-block;
+}
+.region-content {
+    margin-top: 20px;
+}
+#block-views-block-testimonials-block-1 .views-row {
+    border-bottom: 1px dotted #ccc;
+    margin-bottom: 20px;
+}
+.test-title {
+    font-weight: bold;
+    margin: 0;
+}
+.test-position {
+    font-style: italic;
+}
+.test-right {
+    float: right;
+}
+#block-views-block-test-management-block-1 .views-row, #block-views-block-specialized-services-block-1 .views-row {
+	margin-bottom: 30px;
+}
+#block-views-block-test-management-block-1 .views-field-title, #block-views-block-specialized-services-block-1 .views-field-title {
+    color: #333333 !important;
+    font-size: 14px;
+}
+#block-views-block-download-brochure-block-1 {
+    margin-top: 20px;
+}
+.ln-mre {
+    float: right;
+}
+.node--type-upload-pdfs .field--name-field-u .field__item {
+    line-height: 30px;
 }
