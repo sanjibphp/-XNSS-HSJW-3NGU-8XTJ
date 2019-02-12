@@ -120,4 +120,18 @@ jQuery(document).ready(function($){
 			
 		}
 	};
+	
+	/* Disable link in Main menu which is have no href val */
+	Drupal.behaviors.disableNoValLink = {
+		attach: function(context, settings) {
+			$("#mega-menu-3 .stronglink a").each(function(e) {
+				var aHref = $(this).attr('href');
+				if(aHref == '' || !aHref){
+					$(this).css({ 'pointer-events': 'none', 'color': '#fbeefb' });
+				}
+			});
+		}
+	};
 }(jQuery));
+
+
