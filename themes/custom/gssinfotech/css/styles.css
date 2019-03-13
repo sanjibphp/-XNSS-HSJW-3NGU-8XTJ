@@ -457,11 +457,11 @@ span.train-title {
     background: #cce6ff;
 	height: 30px;
 }
-.file--application-pdf a:hover, .ln-mre a:hover {
+.file--application-pdf a:hover, .file--x-office-spreadsheet a:hover, .ln-mre a:hover {
     color: #5f1ba2 !important;
     text-decoration: none;
 }
-.file--application-pdf a:link, .ln-mre a:link {
+.file--application-pdf a:link, .file--x-office-spreadsheet a:link, .ln-mre a:link {
     color: #ab77df;
     text-decoration: none;
 }
@@ -487,6 +487,7 @@ span.train-title {
 }
 .page-node-type-annual-reports .node__content > div {
     display: inline-block;
+	vertical-align: middle;
 }
 .region-content {
     margin-top: 20px;
@@ -518,6 +519,10 @@ span.train-title {
 .ln-mre {
     float: right;
 }
-.node--type-upload-pdfs .field--name-field-u .field__item {
-    line-height: 30px;
+.node--type-upload-pdfs .field--name-field-u .field__item, .file--application-pdf, .pdfpattern .sharepdf li {
+    line-height: 25px;
+}
+.view-display-id-block_2 {
+    padding-top: 10px;
+    text-align: justify;
 }

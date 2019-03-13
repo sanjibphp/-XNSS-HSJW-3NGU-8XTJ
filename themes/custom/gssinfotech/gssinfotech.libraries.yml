@@ -2,9 +2,11 @@ global:
   js:    
     includes/bootstrap/js/bootstrap.min.js: {}
     js/owl.carousel.js: {}
-    js/custom.js: {}
+    includes/jQuery.mmenu/dist/jquery.mmenu.all.js: {}
+    includes/jQuery.mmenu/dist/addons/counters/jquery.mmenu.counters.js: {}
     js/dcmegamenu.js: {}
     js/jquery.hoverIntent.minified.js: {}
+    js/custom.js: {}
     
   dependencies:
     - core/drupal
@@ -16,5 +18,9 @@ global:
       css/owl.carousel.min.css: {}
       css/owl.theme.default.min.css: {}
       includes/bootstrap/css/bootstrap.min.css: {}
-      css/styles.css: {}
+      includes/jQuery.mmenu/dist/jquery.mmenu.all.css: {}
+      includes/jQuery.mmenu/dist/addons/counters/jquery.mmenu.counters.css: {}
       css/dcmegamenu.css: {}
+      css/styles.css: {}
+      css/mobile.css: {media: all and (max-width: 600px)}
+      

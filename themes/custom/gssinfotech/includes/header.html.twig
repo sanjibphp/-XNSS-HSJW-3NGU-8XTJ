@@ -1,16 +1,50 @@
-<div class="row header">
-<div class="col-md-2">
-{{ gssinfotech_branding }}
+{#
+/**
+ * @file
+ * declare header elements in header
+ */
+#}
+<header id="header" class="row header" role="banner"> 
+{# Desktop Header #}
+<div class="container-fluid hidden-xs hidden-sm">
+	<div class="row">
+		<div class="col-md-3 col-lg-3">
+			{{ gssinfotech_branding }}
+		</div>
+		<div class="col-md-9 col-lg-9">
+			<div class="top-menu-right">
+				<div class="social-icons">{{ social_block }}</div>
+				<div class="demo-container">
+					<div class="grey">  
+						{{ main_menu }}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
-<div class="col-md-9">
-<div class="social-icons">{{ social_block }}</div>
+{# Desktop Header #}
 
-<div class="demo-container">
-<div class="grey">  
-{{ main_menu }}
+{# Mobile Header Start #}
+<div class="container-fluid hidden-md hidden-lg" style="padding:0;">
+  <div class="row" style="margin:0">
+    <div class="col-xs-4 col-sm-4 mobile-logo">
+		{{ gssinfotech_branding }}
+	</div>
+	
+    <div class="col-xs-8 col-sm-8 mobile-menu">
+		<div class="routing-no pull-left">
+			<ul> {{ social_block }}</ul>
+		</div> 
+		<div class="mh-head">
+			<a href="#mobile-menu-wrap"><span></span></a>
+		</div>
+		<nav id="mobile-menu-wrap" class="iframe-wrap">
+			{{ main_menu }}					
+		</nav>	 <!-- /mobile-menuwrapper -->      
+	</div>
+  </div>
 </div>
-</div>
+{# Mobile Header End #}
 
-
-</div>
-</div>  
+</header> 

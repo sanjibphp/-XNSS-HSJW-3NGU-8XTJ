@@ -1,37 +1,19 @@
 # The breakpoints should match _vars.scss
-p4a.desktop_up:
-  label: desktop up
+gssinfotech.desktop:
+  label: Desktop
   mediaQuery: 'all and (min-width: 941px)'
   weight: 0
   multipliers:
     - 1x
-p4a.big_tablet_down:
-  label: big tablet down
+gssinfotech.tablet:
+  label: Tablet
   mediaQuery: 'all and (max-width: 940px)'
   weight: 1
   multipliers:
     - 1x
-p4a.tablet_down:
-  label: tablet down
-  mediaQuery: 'all and (max-width: 860px)'
-  weight: 2
-  multipliers:
-    - 1x
-p4a.small_tablet_down:
-  label: small tablet down
-  mediaQuery: 'all and (max-width: 740px)'
-  weight: 3
-  multipliers:
-    - 1x
-p4a.big_mobile_down:
-  label: big mobile down
+gssinfotech.mobile:
+  label: Mobile
   mediaQuery: 'all and (max-width: 600px)'
-  weight: 4
-  multipliers:
-    - 1x
-p4a.mobile_down:
-  label: mobile down
-  mediaQuery: 'all and (max-width: 520px)'
   weight: 5
   multipliers:
     - 1x

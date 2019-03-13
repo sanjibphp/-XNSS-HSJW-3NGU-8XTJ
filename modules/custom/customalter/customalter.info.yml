@@ -1,0 +1,7 @@
+name: Custom Form Alter
+description: Perform alterations before a form is rendered
+core: 8.x
+package: Custom
+type: module
+
+version: 8.x-1.0

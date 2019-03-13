@@ -8,36 +8,57 @@
 {% include directory ~ '/includes/header.html.twig' %}
 
 	{% if page.left_sidebar %}
-	{% set full_content_class = 'col-md-10' %}
+	{% set full_content_class = 'col-md-10 col-sm-12 col-xs-12' %}
 	{% else %}
-	{% set full_content_class = 'col-md-12' %}
+	{% set full_content_class = 'col-md-12 col-sm-12 col-xs-12' %}
 	{% endif %}
 	
 	{% if page.right_sidebar %}
-	{% set content_class = 'col-md-9' %}
+	{% set content_class = 'col-md-9 col-sm-12 col-xs-12' %}
 	{% else %}
-	{% set content_class = 'col-md-12' %}
+	{% set content_class = 'col-md-12 col-sm-12 col-xs-12' %}
 	{% endif %}
-
+<div class="container-fluid">
 	<div class="row">
-	{% if page.left_sidebar %}
-		<div class="col-md-2">
-			{{ page.left_sidebar }}
+		<div class="col-md-2 col-sm-12 col-xs-12">
+			{% if page.left_sidebar %}
+				{% block left_sidebar %}
+					<div class="left-sidebar-1">
+						{{ page.left_sidebar }}
+					</div>
+				{% endblock %}
+			{% endif %}
+			{% if page.left_sidebar_2 %}
+				{% block left_sidebar_2 %}
+					<div class="left-sidebar-2">
+						{{ page.left_sidebar_2 }}
+					</div>
+				{% endblock %}
+			{% endif %}
 		</div>
-	{% endif %}
-		<div class="{{ full_content_class }}">
-			<div class="content_top">{{ page.content_top }}</div>
+		<section class="{{ full_content_class }}">
+			{% if page.content_top %}
+				{% block content_top %}
+					<div class="content_top">{{ page.content_top }}</div>
+				{% endblock %}
+			{% endif %}
 			<div class="row">
-				<div class="{{ content_class }}">
-					{{ page.content }}
-				</div>
+				{% if page.content %}
+					{% block content %}
+					<div class="{{ content_class }}">
+						{{ page.content }}
+					</div>
+					{% endblock %}
+				{% endif %}
 				{% if page.right_sidebar %}
-				<div class="col-md-3">
-					{{ page.right_sidebar }}
-				</div>
+					{% block right_sidebar %}
+						<aside class="col-md-3 col-sm-12 col-xs-12">
+							{{ page.right_sidebar }}
+						</aside>
+					{% endblock %}
 				{% endif %}
 			</div>
-		</div>
+		</section>
 	</div>
-
+</div>
 {% include directory ~ '/includes/footer.html.twig' %}

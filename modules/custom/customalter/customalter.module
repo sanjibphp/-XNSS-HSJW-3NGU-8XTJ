@@ -1,0 +1,11 @@
+<?php 
+
+/* Impliments hook_form_alter()
+ * 
+ * If Condition true Visible input text.
+ */
+function customalter_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+	if($form_id == 'node_testimonials_form' || $form_id == 'node_testimonials_edit_form') {
+		$form['#attached']['library'][] = 'customalter/custom';		
+	}
+}

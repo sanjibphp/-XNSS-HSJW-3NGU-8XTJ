@@ -1,0 +1,44 @@
+/**
+ * Mobile responsive css: max width 600px
+ */
+.mh-head a span {
+	background: #ccc;
+	display: block;
+	height: 2px;
+	margin: 6px 0;
+	transition: 0.4s;
+}
+.mh-head a:before,
+.mh-head a:after
+{
+	content: '';
+	display: block;
+	background: #ccc;
+	height: 2px;
+	transition: 0.4s;
+}
+.mh-head {
+	background-color: black;
+    margin-top: 0px;
+	float: right;
+    width: 35px;
+    padding: 5px;
+}
+
+.mh-text {
+	display: none;
+}
+.mm-navbar { 
+    --mm-color-background: #4bb5ef;
+    --mm-color-text-dimmed: #fff;
+    --mm-color-button: #fff;
+}
+.mm-panel { 
+    --mm-color-background: #e0f2fc;
+    --mm-color-text: #222;
+    --mm-color-button: #4bb5ef;
+}
+.stronglink a.mm-listitem__text {
+    color: black !important;
+	font-weight: unset !important;
+}

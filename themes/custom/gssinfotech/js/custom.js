@@ -1,18 +1,20 @@
 /* Main Menu */
 
 jQuery(document).ready(function($){
-	jQuery('#mega-menu-1').dcMegaMenu({
-		rowItems: '6',
-		speed: 'fast',
-		effect: 'fade',
-		/*event: 'click',*/
-		fullWidth: true
-	});
-	jQuery('#mega-menu-3').dcMegaMenu({
-		rowItems: '2',
-		speed: 'fast',
-		effect: 'fade'
-	});
+	if ($(window).width() > 768) {
+		jQuery('#mega-menu-1').dcMegaMenu({
+			rowItems: '6',
+			speed: 'fast',
+			effect: 'fade',
+			/*event: 'click',*/
+			fullWidth: true
+		});
+		jQuery('#mega-menu-3').dcMegaMenu({
+			rowItems: '2',
+			speed: 'fast',
+			effect: 'fade'
+		});
+	}
 	jQuery('#slider-owl').owlCarousel({
     	margin: 10,
         nav: true,
@@ -131,6 +133,37 @@ jQuery(document).ready(function($){
 				}
 			});
 		}
+	};
+	
+		/* Mobile responsive menu */
+	Drupal.behaviors.mobilemenu = {
+		attach: function(context, settings) {
+			if ($(window).width() < 768) {
+				
+				$('nav#mobile-menu-wrap ul:first').attr('id','mobile-menu-main');
+				$('nav#mobile-menu-wrap ul:first').removeClass('mega-menu').addClass("mobile_menu");
+				$('ul#mobile-menu-main li > ul').addClass('submenu');
+				var auto_inc_id = 0; //initialise value of auto incremented id to 0
+				$('ul#mobile-menu-main li.nolist > ul').each(function(i, e){
+					$(this).attr('id', 'group0-'+auto_inc_id); 
+					auto_inc_id++; 
+					var get_ulid =  $(this).attr('id'); 
+					if ($(e).has('ul')) { 
+						$('#mobile-menu-main li.nolist ul[id='+get_ulid+'] li.nolink > ul').addClass(get_ulid); 
+					}
+					
+					if($(e).has('ul')) {
+						$('#mobile-menu-main li.nolist ul#'+get_ulid+' li.nolink > ul.'+get_ulid).children().clone().appendTo("#mobile-menu-main li.nolist ul#"+get_ulid);
+					}
+					$('#mobile-menu-main li.nolist ul#'+get_ulid+' li.nolink').remove();
+				});
+				$('#mobile-menu-wrap').mmenu({
+						"extensions": [ "position-back", "position-right", "pagedim-black", "border-full", "fx-listitems-fade" ],
+						//"counters": true,
+				}); 
+				
+			}
+		}	
 	};
 }(jQuery));
 
